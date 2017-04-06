@@ -1,0 +1,132 @@
+<div class="jumbotron text-center">
+
+
+    <div ng-controller="cartController">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>{{message}}</h1>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+
+
+                            <table class="table table-bordered">
+
+                                <!-- header -->
+                                <tr class="well">
+                                    <td><b>Item</b></td>
+                                    <td class="tdCenter"><b>Quantity</b></td>
+                                    <td class="tdRight"><b>Price</b></td>
+                                    <td />
+                                </tr>
+
+                                <!-- empty cart message -->
+                                <!--<tr ng-hide="vm.GetTotalItemCount() > 0" >-->
+                                    <!--<td class="tdCenter" colspan="4">-->
+                                        <!--Your cart is empty.-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+
+                                <tr class="well" ng-repeat='item in cart'>
+                                    <td>{{item.name}}</td>
+                                    <td class="tdCenter">
+                                        <div class="input-append">
+                                            <button class="btn btn-primary" ng-click='plusQty(item)'>+</button>
+
+                                                <span style="width:100px" >{{Itemqty(item)}}</span>
+
+                                            <button class="btn btn-danger" min="0" ng-click='minusQty(item)'>-</button>
+
+                                        </div>
+                                    </td>
+                                    <td class="tdRight">€ {{(item.price*Itemqty(item))}}</td>
+                                    <td class="tdRight">
+                                        <button class="btn btn-danger" ng-click='remove(item)'>remove </button>
+                                    </td>
+                                </tr>
+
+                                <!-- footer -->
+                                <tr class="well">
+                                    <td><b>Total</b></td>
+                                    <td class="tdCenter"><b>{{cartTotal}}</b></td>
+                                    <td class="tdRight"><b>€ {{totalPrice}}</b></td>
+                                    <td />
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- buttons -->
+                        <div class="col-sm-12">
+                            <p class="text-info">
+                                <a href="#/" class="btn btn-block" style="text-decoration:none;background:grey;color:white">
+                                    <i class="icon-chevron-left" /> back to store
+                                </a>
+                                <!--<button-->
+                                        <!--class="btn btn-block btn-danger"-->
+                                        <!--ng-click=" "-->
+                                        <!--ng-disabled=" < 100" >-->
+                                    <!--<i class="icon-trash icon-white" /> Payment-->
+                                <!--</button>-->
+                            </p>
+
+                            <br /><br />
+                        </div>
+                    </div>
+
+
+
+            </div>
+
+    <div class="col-md-6">
+
+
+        <div class="row">
+            <div class="col-sm-12">
+
+
+
+                <h2>Specials will order depending what you have in your Cart to help you save!</h2>
+                <!--<div >-->
+                <table class="col-sm-12" ng-repeat='s in Specials'>
+
+                    <tr>
+                        <th><h3>{{s.name}}</h3></th>
+                    </tr>
+                    <tr>
+                    <td>
+                    <div ng-repeat="i in s.items">
+                        <span>
+                            <h4>{{i.name}} </h4>
+                        </span>
+                    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdCenter">
+
+                        <span><h5> Price Without Special € {{s.adHocPrice}}</h5></span>
+                    <span><h5 style="color: red">SAVE € {{s.saving}}</h5></span>
+                    <span><h5>PRICE € {{s.price}}</h5></span>
+                        </td>
+                    </tr>
+                    <tr>
+<td>
+                        <button class="btn btn-primary" ng-click='addToCart(s)'>Add to Cart</button>
+                        <button class="btn btn-success" ng-click=''>Replace Items with Specials</button>
+                        </td>
+                    </tr>
+</table>
+            <!--</div>-->
+        </div>
+    </div>
+
+    </div>
+    </div>
+</div>
+
+
+        </div>
+
+</div>

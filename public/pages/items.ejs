@@ -1,0 +1,113 @@
+<div class="jumbotron text-center">
+    <h1> MENU </h1>
+    <div class="navBar">
+        Why Not take a look at our <a href ="#specials">Specials</a> to Save some Money and get some Deals?
+    </div>
+
+    <div ng-controller="itemsController as list">
+        <div ng-repeat="i in items"
+        ng-if="cart.length==0"
+        ng-init="open()">
+
+    </div>
+<div class="row">
+              <h2>Chips</h2>
+        <div ng-repeat="chip in chips">
+            <div class="thumbnail col-md-3 offset3  col-centered">
+                <img style="height:70px; weight:100px;" src="./images/chips.jpg"
+                     alt="..." class="img-responsive">
+                <div class="caption">
+                    <span><h3>{{chip.name}}</h3></span>
+                    <span><h3> € {{chip.price}}</h3></span>
+                    <p><a class="btn btn-success" value = "Add" ng-click = "addToCart(chip)" role="button">Add to Cart</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div class="row">
+
+        <h2> Chicken </h2>
+        <div ng-repeat="chicken in chickens ">
+            <div class="thumbnail col-md-3 col-centered">
+                <img style="height:100px; weight:100px;" src="./images/nuggets.jpg"
+                     alt="..." class="img-responsive">
+                <div class="caption">
+                    <span><h3>{{chicken.name}}</h3></span>
+                    <span><h3> € {{chicken.price}}</h3></span>
+                    <p><a  class="btn btn-success" role="button"  ng-click = "addToCart(chicken)">Add to Cart</a></p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <div class="row">
+
+        <h2> Burgers </h2>
+        <div ng-repeat="burger in burgers">
+            <div class="thumbnail col-md-3  offset3  col-centered">
+                <img style="height:100px; weight:100px;" src="./images/burger.png"
+                     alt="..." class="img-responsive">
+                <div class="caption">
+                    <span><h3>{{burger.name}}</h3></span>
+                    <span><h3> € {{burger.price}}</h3></span>
+                    <p><a  class="btn btn-success" role="button"  ng-click = "addToCart(burger)">Add to Cart</a></p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+        <div class="row">
+
+            <h2 id="fishMenu" name="fishMenu"> Fish </h2>
+            <div ng-repeat="fish in fishs">
+                <div   class="thumbnail col-md-3  offset3  col-centered">
+                    <img style="height:100px; weight:100px;" src="./images/fish.jpg"
+                         alt="..." class="img-responsive">
+                    <div class="caption">
+                        <span><h3>{{fish.name}}</h3></span>
+                        <span><h3> € {{fish.price}}</h3></span>
+                        <p><a  class="btn btn-success" role="button"  ng-click = "addToCart(fish)">Add to Cart</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <h2> Sausages </h2>
+            <div ng-repeat="sausage in Sausages">
+                <div   class="thumbnail col-md-3  col-centered">
+                    <img style="height:100px; weight:100px;" src="./images/Sausages.jpg"
+                         alt="..." class="img-responsive">
+                    <div class="caption">
+                        <span><h3>{{sausage.name}}</h3></span>
+                        <span><h3> € {{sausage.price}}</h3></span>
+                        <p><a class="btn btn-success" role="button"  ng-click = "addToCart(sausage)">Add to Cart</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--<span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>-->
+
+
+                <!--<button type="button" class="btn btn-default" ng-click="delete(chicken._id)">-->
+                    <!--<span class="glyphicon glyphicon-remove"></span> Remove-->
+                <!--</button>-->
+                <!--<button type="button" class="btn btn-default" ng-click="update(chicken)">-->
+                    <!--<span class="glyphicon glyphicon-edit"></span> Edit-->
+                <!--</button>-->
+                <!--</span>-->
+
+            <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+
+</div>
+</div>

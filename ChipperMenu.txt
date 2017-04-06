@@ -1,0 +1,224 @@
+{
+	"Chips": [{
+		"_id": 1,
+		"name": "Small",
+		"price": 2.50,
+		"quantityPrice": 1
+	}, {
+		"_id": 2,
+		"name": "Large",
+		"price": 3.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 3,
+		"name": "Family Box",
+		"price": 7.00,
+		"quantityPrice": 1
+	}]
+
+	"Sausages":[ {
+		"_id": 4,
+		"name": "Plain",
+		"price": 0.50,
+		"quantityPrice": 1
+	}, {
+		"_id": 5,
+		"name": "Large",
+		"price": 1.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 6,
+		"name": "Battered",
+		"price": 1.50,
+		"quantityPrice": 1
+	}]
+
+	"Burgers":[ {
+		"_id": 7,
+		"name": "Plain Burger",
+		"price": 2.50,
+		"quantityPrice": 1
+	}, {
+		"_id": 8,
+		"name": "Cheese Burger",
+		"price": 3.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 9,
+		"name": "Double Cheese Burger",
+		"price": 3.50,
+		"quantityPrice": 1
+	}, {
+		"_id": 10,
+		"name": "1/4 Pounder",
+		"price": 4.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 11,
+		"name": "1/4 Pounder with Cheese",
+		"price": 4.50,
+		"quantityPrice": 1
+	}]
+
+	"Chicken":[ { 
+		"_id": 12,
+		"name": "Chicken Pieces",
+		"price": 2.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 13,
+		"name": "Six Nuggets",
+		"price": 3.00,
+		"quantityPrice": 6
+	}, {
+		"_id": 14,
+		"name": "Eight Nuggets",
+		"price": 3.50,
+		"quantityPrice": 8
+	}, {
+		"_id": 15,
+		"name": "Ten Nuggets",
+		"price": 4.00,
+		"quantityPrice": 10
+	}, {
+		"_id": 16,
+		"name": "Chicken Fillet Burger",
+		"price": 4.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 17,
+		"name": "Snack Box: -2 Pieces of Chicken",
+		"price": 6.00,
+		"quantityPrice": 1
+	}]
+
+	"Fish":[ { 
+		"_id": 18,
+		"name": "Cod",
+		"price": 3.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 19,
+		"name": "Haddock",
+		"price": 3.50,
+		"quantityPrice": 1
+	}, {
+		"_id": 20,
+		"name": "Plaice",
+		"price": 4.00,
+		"quantityPrice": 1
+	}, {
+		"_id": 21,
+		"name": "Fish Box: -Plaice and Chips",
+		"price": 7.00,
+		"quantityPrice": 1
+	}]
+}
+{
+	"specials": [{
+		"_id": 1,
+		"name": "Monday",
+		"price": 5.00,
+		"adHocPrice": 7.00,
+		"saving": 2.00,
+		"items": [{
+			"_id": 11,
+			"name": "1/4 Pounder with Cheese"
+		}, {
+			"_id": 1,
+			"name": "Chips"
+		}]
+	}, {
+		"_id": 2,
+		"name": "Tuesday",
+		"price": 5.00,
+		"adHocPrice": 6.50,
+		"saving": 1.50,
+		"items": [{
+			"_id": 16,
+			"name": "Chicken Fillet Burger"
+		}, {
+			"_id": 1,
+			"name": "Chips"
+		}]
+	}, {
+		"_id": 3,
+		"name": "Wednesday",
+		"price": 5.00,
+		"adHocPrice": 6.00,
+		"saving": 1.00,
+		"items": [{
+			"_id": 17,
+			"name": "Snack Box: -2 Pieces of Chicken"
+		}, {
+			"_id": 1,
+			"name": "Chips"
+		}]
+	}, {
+		"_id": 4,
+		"name": "Thursday",
+		"price": 5.00,
+		"adHocPrice": 6.00,
+		"saving": 1.00,
+		"items": [{
+			"_id": 9,
+			"name": "Double Cheese Burger"
+		}, {
+			"_id": 1,
+			"name": "Chips"
+		}]
+	}, {
+		"_id": 5,
+		"name": "Friday",
+		"price": 6.00,
+		"adHocPrice": 7.00,
+		"saving": 1.00,
+		"items": [{
+			"_id": 17,
+			"name": "Fish Box: -Plaice and Chips"
+		}]
+	}, {
+		"_id": 6,
+		"name": "Saturday",
+		"price": 5.00,
+		"adHocPrice": 6.50,
+		"saving": 1.50,
+		"items": [{
+			"_id": 13,
+			"name": "6 Nuggets",
+			"quantity": 6
+		}, {
+			"_id": 16,
+			"name": "2 Plain Sauages",
+			"quantity": 2
+		}, {
+			"_id": 4,
+			"name": "Chips"
+		}]
+	}, {
+		"_id": 7,
+		"name": "Every Day Meal",
+		"price": 10.00,
+		"adHocPrice": 14.00,
+		"saving": 4.00,
+		"items": [{
+			"_id": 4,
+			"name": "2 Chips",
+			"quantity": 2
+		}, {
+			"_id": 7,
+			"name": "2 Plain Burgers",
+			"quantity": 2
+		}, {
+			"_id": 16,
+			"name": "2 Plain Sauages",
+			"quantity": 2
+		}, {
+			"_id": 13,
+			"name": "6 Nuggets",
+			"quantity": 6
+		}]
+
+
+	}]
+}

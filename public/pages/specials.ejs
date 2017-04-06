@@ -1,0 +1,45 @@
+<div class="jumbotron text-center">
+    <h1> Specials </h1>
+    <div class="navBar">
+       have a look at the <a href ="#items">Menu</a> for all of our individual items
+    </div>
+
+    <div ng-controller="specialsController as list">
+<div class="row">
+
+        <div ng-repeat="special in specials">
+            <div class="thumbnail col-md-3">
+                <img style="height:100px; weight:100px;" src="./images/specials.jpg"
+                     alt="..." class="img-responsive">
+                <div class="caption">
+                    <span><h3>{{special.name}}</h3></span>
+                    <div ng-repeat="item in special.items">
+                    <span><h4>{{item.name}} </h4></span>
+                    </div>
+                    <span><h5 style="color: red">SAVE € {{special.saving}}</h5></span>
+                    <span><h5>PRICE € {{special.price}}</h5></span>
+                    <p><a class="btn btn-success" ng-click='addSpecialsCart(special)' role="button">Add to Cart</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <!--<span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>-->
+
+
+                <!--<button type="button" class="btn btn-default" ng-click="delete(chicken._id)">-->
+                    <!--<span class="glyphicon glyphicon-remove"></span> Remove-->
+                <!--</button>-->
+                <!--<button type="button" class="btn btn-default" ng-click="update(chicken)">-->
+                    <!--<span class="glyphicon glyphicon-edit"></span> Edit-->
+                <!--</button>-->
+                <!--</span>-->
+
+            <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+
+</div>
+</div>
