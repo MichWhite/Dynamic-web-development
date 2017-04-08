@@ -60,69 +60,89 @@ app.controller('cartController',['$scope', '$http','cart', function($scope, $htt
         $scope.totalPrice =  totalPrice();
         $scope.cartTotal = cart.cartTotal;
 
+            $scope.Specials = allSpecails();
 
         }
 
     };
 
 
-
     $scope.Specials = allSpecails();
         function allSpecails() {
-        console.log('olokojo0');
         $http.get('/specials')
             .success(function (data) {
-                var PointArray = [];
-                data.forEach(function(obj,i) {
-                // });
-                // for(var i=0; i<=data.length; i++){
-                    console.log(obj);
-                    console.log(obj.items);
-                    console.log(obj.items.length);
-                    if (cart.cart.length != 0) {
-                        for(var j=0; j<=obj.items.length-1; j++) {
-                            console.log(i);
+                if(cart.cart.length==0) {
+                    $scope.Specials = data;
+                }
+                else{
+                var SpecialNamesArray = [];
+                for(var o =0; o<data.length; o++){
+                    console.log(o);
+                    var nameArray=[];
+                   for(var  t=0; t<data[o].items.length; t++){
+                        var nameItem =data[o].items[t].name;
+                        nameItem = nameItem.replace(/[0-9] /g, '');
+                       // console.log(nameItem);
+                           if(t==0) {
+
+                               nameArray.push(nameItem);
+                           }
+                           else if(t==data[o].items.length-1){
+                               nameArray.push(nameItem);
+                               SpecialNamesArray.push(nameArray)
+
+                           }
+
+                           else{
+                               nameArray.push(nameItem);
+
+                           }
+
+
+                   }
+                }
+                console.log(SpecialNamesArray);
+
+            for(var i = 0; i < cart.cart.length; i++) {
+                for (var j = 0; j < SpecialNamesArray.length; j++) {
+                    for (var q = 0; q < SpecialNamesArray[j].length; q++) {
+                        console.log(cart.cart[i].name);
+                        console.log(SpecialNamesArray[j][q]);
+                        var newcaritem = cart.cart[i].name.replace(/[0-9] /g, '');
+                        if (newcaritem == SpecialNamesArray[j][q]) {
                             console.log(j);
-                            var ItemName = obj.items[j].name;
-                            for (var y = 0; y <= cart.cart.length-1;  y++)
-                            {
-                            console.log("CART"+y);
-                            if (cart.cart[y].name == ItemName) {
-                                if (j > 0 ) {
-                                    console.log('olo');
-                                    PointArray[PointArray.indexOf(j)] = PointArray[PointArray.indexOf(j)] + 1;
+                            console.log(q);
+                            console.log(data[j]);
+                            console.log('nnnnnnnn');
 
-
-                                }
-                                else {
-                                    PointArray.push(1);
-                                    // $scope.Specials = data;
-                                }
+                            if(q==0) {//if firstt special items then push once else add one
+                                data[j].Point = 1;
+                            }
+                            else {
+                                data[j].Point = data[j].Point+1;
+                                console.log(data[j].Point);
                             }
 
                         }
-
                     }
-                        PointArray.push(1);
-
-                    }
-                    else{
-                        return data;
-
-                    }
-                });
-                console.log(PointArray);
-                function getSorted(data, PointArray) {
-                    var result = [];
-                    for(var i=0; i<data.length; i++) {
-                        result[i] = data[PointArray[i]];
-                    }
-                    console.log(result);
-                    return result;
                 }
-                return getSorted(data, PointArray);
+            }
+
+                for(var p=0; p<data.length; p++) {
+                    if(isNaN(data[p].Point)) {
+                        data[p].Point = 0
+                    }
+                    }
 
 
+                    data.sort(function (a, b) {
+                        return b.Point - a.Point;
+                    });
+                    console.log(data);
+
+                    $scope.Specials = data;
+
+                }
             })
             .error(function (data) {
                 console.log('Error: ' + data);
