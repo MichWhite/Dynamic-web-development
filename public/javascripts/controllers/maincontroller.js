@@ -6,7 +6,8 @@ app.controller('mainController', ['cart','$scope', function(cart, $scope) {
       $scope.message = 'CHIPPER';
     console.log(cart.cartTotal);
     console.log(cart.cart);
-        $scope.CartCounter = cart.cartTotal ;
+    // $scope.CartCounter = cart.cartTotal ;
+    console.log(cart.cartTotal)
 
 }
   ]);

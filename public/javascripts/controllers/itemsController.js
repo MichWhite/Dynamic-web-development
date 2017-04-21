@@ -9,7 +9,6 @@ app.controller('itemsController', ['$scope', '$http','cart', function( $scope, $
     findAllFish();
     findAllSausages();
 
-
     $scope.addToCart = function (item) {
         cart.cartTotal = cart.cartTotal + 1;
         console.log(cart.cart.length);
@@ -17,8 +16,9 @@ app.controller('itemsController', ['$scope', '$http','cart', function( $scope, $
             console.log('CART 0');
             cart.cart.push(item);
             cart.cartQuantity.push(1);
-            $scope.CartCounter = cart.cartTotal;
-
+            // $scope.CartCounter = cart.cartTotal ;
+            console.log(cart.cartTotal);
+           alert('ITEM ADDED TO CART');
             return;
 
         }
@@ -32,6 +32,7 @@ app.controller('itemsController', ['$scope', '$http','cart', function( $scope, $
 
                         cart.cartQuantity[i] = cart.cartQuantity[i] + 1;
                         $scope.CartCounter = cart.cartTotal;
+                        alert('ITEM ADDED TO CART');
 
                         return el;
                     }
@@ -43,6 +44,7 @@ app.controller('itemsController', ['$scope', '$http','cart', function( $scope, $
                     cart.cart.push(item);
                     cart.cartQuantity.push(1);
                     $scope.CartCounter = cart.cartTotal;
+                    alert('ITEM ADDED TO CART');
 
                 }
         }

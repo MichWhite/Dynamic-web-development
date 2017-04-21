@@ -29,7 +29,7 @@
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 </head>
 
-<body ng-controller="mainController as expression">
+<body ng-controller="mainController">
 
 <nav class="navbar navbar-inverse"  data-spy="affix"  data-offset-top="197">
   <div style="position: relative; height: 0; width: 100%;">
@@ -47,7 +47,8 @@
       <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
       <!--<li><a href="#edit"><i class="fa fa-list"></i> Edit Menu </a></li>-->
       <li><a href="#items"><i class="fa fa-list"></i> Menu </a></li>
-      <li><a href="#cart"><i class="fa fa-shopping-cart"></i> Shopping Cart </a></li>
+      <li><a href="#cart"><i class="fa fa-shopping-cart"></i> Shopping Cart {{CartCounter}} </a></li>
+
 
     </ul>
   </div>

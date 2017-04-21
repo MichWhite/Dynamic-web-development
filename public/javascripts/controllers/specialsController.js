@@ -14,6 +14,7 @@ app.controller('specialsController', ['$scope', '$http','cart', function($scope,
             cart.cart.push(item);
             cart.cartQuantity.push(1);
             $scope.CartCounter = cart.cartTotal;
+            alert('ITEM ADDED TO CART');
 
             return;
 
@@ -28,6 +29,7 @@ app.controller('specialsController', ['$scope', '$http','cart', function($scope,
 
                     cart.cartQuantity[i] = cart.cartQuantity[i] + 1;
                     $scope.CartCounter = cart.cartTotal;
+                    alert('ITEM ADDED TO CART');
 
                     return el;
                 }
@@ -39,6 +41,7 @@ app.controller('specialsController', ['$scope', '$http','cart', function($scope,
                 cart.cart.push(item);
                 cart.cartQuantity.push(1);
                 $scope.CartCounter = cart.cartTotal;
+                alert('ITEM ADDED TO CART');
 
             }
         }
